@@ -1,0 +1,207 @@
+<!DOCTYPE html>  
+<html lang="es"> <!-- idioma  -->
+<head>
+    <meta charset="UTF-8"> <!-- tildes  -->
+    <title> tienda de Juguetes Spider  </title>  <!--  titulo o nombre de la pagina -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        header {
+            background-image: url (https://i.guim.co.uk/img/media/892fa5c71f29ce088247397726f32ca83b8231d0/79_0_3386_2031/master/3386.jpg?width=1200&quality=85&auto=format&fit=max&s=f4abd83f4c0bebb2099b844cc144ccac);alt = "foto de una araña" width= "200" heigth="200">
+            background-position: center;
+            color: black;
+            padding: 60px 30px;
+            text-align: center; 
+        }
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .producto {
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .producto:hover {
+            transform: scale(1.03);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .boton-compra {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .boton-compra:hover {
+            background-color: #219150;
+        }
+        .contacto {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .contacto a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .contacto a:hover {
+            color: #2980b9;
+        }
+
+        /* Estilos para ventana emergente */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: entrada 0.5s ease;
+        }
+        .popup-contenido img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .popup-contenido h2 {
+            margin: 0 0 10px 0;
+        }
+        .cerrar {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes entrada {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SpiderCompras E.O</h1>
+</header>
+
+<section class="contenedor">
+
+    <div class="producto">
+        <img src="C:\Users\agust\Downloads\61r2HpXHyVL._AC_SL1000_.jpg" alt="Spider Lego">
+        <h2>Marvel Lego Spider</h2>
+        <p><strong>Q350.00</strong></p>
+        <p>Diviertete armando legos</p>
+        <button class="boton-compra" onclick="mostrarPopup('MarvelLego')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="C:\Users\agust\Downloads\81METfvUNCL._AC_SL1500_.jpg" alt="Spider Lego">
+        <h2>Lego spiderman </h2>
+        <p><strong>Q280.00</strong></p>
+        <p>Figura para construir: Iron Spiderman</p>
+        <button class="boton-compra" onclick="mostrarPopup('LegoSpider ')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="C:\Users\agust\Downloads\D_NQ_NP_633798-MLA49716986928_042022-O.webp" alt="Laptop Lenovo">
+        <h2>Peluche Spider </h2>
+        <p><strong>Q150.00</strong></p>
+        <p>Peluche para tu persona ideal</p>
+        <button class="boton-compra" onclick="mostrarPopup('PelucheSpider')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="C:\Users\agust\Downloads\MTk4NTU3M2-500x500.jpg" alt="Lego de spider">
+        <h2>Lego cabeza de spiderman</h2>
+        <p><strong>Q250.00</strong></p>
+        <p>crea y diviertete </p>
+        <button class="boton-compra" onclick="mostrarPopup('SpiderLego')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="C:\Users\agust\Downloads\s-l400.jpg" alt="Funco Spider">
+        <h2>Funko spider</h2>
+        <p><strong>Q380.00</strong></p>
+        <p>compra y colecciona funkos</p>
+        <button class="boton-compra" onclick="mostrarPopup('FunkoSpider')">Comprar</button>
+    </div>
+
+</section>
+
+<div class="contacto">
+    <h3>Contáctanos</h3>
+    <a href="https://wa.me/50231805959" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:SpiderCompras.E.O@jugueteria.com">📧 Correo</a>
+    <a href="tel:+50255905261">📞 Llamada</a>
+</div>
+
+
+<div class="popup" id="popup">
+    <div class="popup-contenido">
+        <img src="https://i.imgur.com/U9dFIdh.png" alt="Éxito">
+        <h2>¡Compra realizada!</h2>
+        <p id="mensajeProducto"></p>
+        <button class="cerrar" onclick="cerrarPopup()">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    function mostrarPopup(producto) {
+        document.getElementById("mensajeProducto").innerText = "Has comprado: " + producto + ". Te contactaremos pronto.";
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
