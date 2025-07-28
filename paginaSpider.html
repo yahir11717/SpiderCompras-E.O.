@@ -1,0 +1,263 @@
+<!DOCTYPE html>  
+<html lang="es"> <!-- idioma  -->
+<head>
+    <meta charset="UTF-8"> <!-- tildes  -->
+    <title> tienda de Accesorios Spider  </title>  <!--  titulo o nombre de la pagina -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        header {
+            background-image: url('https://wallpapers.com/images/featured/fondos-de-spiderman-oycfyb1ksermw921.jpg');
+            background-position: center;
+            color: white;
+            padding: 260px 180px;
+            text-align: center; 
+        }
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 30px 30px;
+            border-radius: 40px;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+        }
+        .producto {
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .producto:hover {
+            transform: scale(1.03);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .boton-compra {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .boton-compra:hover {
+            background-color: #219150;
+        }
+        .contacto {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .contacto a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .contacto a:hover {
+            color: #2980b9;
+        }
+
+        /* Estilos para ventana emergente */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: entrada 0.5s ease;
+        }
+        .popup-contenido img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .popup-contenido h2 {
+            margin: 0 0 10px 0;
+        }
+        .cerrar {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes entrada {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SpiderCompras O.E</h1>
+</header>
+
+<section class="contenedor">
+
+    <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/71j44HDefoL._AC_SL1000_.jpg" alt="Spider Lego">
+        <h2>Marvel Lego Spider</h2>
+        <p><strong>Q350.00</strong></p>
+        <p>Diviertete armando legos</p>
+        <button class="boton-compra" onclick="mostrarPopup('MarvelLego')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://ss863.suburbia.com.mx/xl/5008123723.jpg" alt="Spider Lego">
+        <h2>Lego spiderman </h2>
+        <p><strong>Q280.00</strong></p>
+        <p>Figura para construir: Iron Spiderman</p>
+        <button class="boton-compra" onclick="mostrarPopup('LegoSpider ')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_976336-MLM52797276409_122022-O.webp" alt="Peluche de Spiderman">
+        <h2>Peluche Spider </h2>
+        <p><strong>Q150.00</strong></p>
+        <p>Peluche para tu persona ideal</p>
+        <button class="boton-compra" onclick="mostrarPopup('PelucheSpider')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://i.ebayimg.com/images/g/~DMAAOSwPtJllyip/s-l1200.jpg" alt="Lego de spider">
+        <h2>Lego cabeza de spiderman</h2>
+        <p><strong>Q250.00</strong></p>
+        <p>crea y diviertete </p>
+        <button class="boton-compra" onclick="mostrarPopup('SpiderLego')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://img.pacifiko.com/PROD/resize/1/500x500/NDIwZDU2OD.jpg" alt="Funco Spider">
+        <h2>Funko spider</h2>
+        <p><strong>Q280.00</strong></p>
+        <p>compra y colecciona funkos</p>
+        <button class="boton-compra" onclick="mostrarPopup('FunkoSpider')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://mimarket.micoope.com.gt/wp-content/uploads/2023/07/Mascara-Y-Guantes-De-Spiderman-1-456x500-1.png" alt="Mascara y guantes">
+        <h2>Marvel Mascara de spider</h2>
+        <p><strong>Q180.00</strong></p>
+        <p>Divierte jugando a ser spiderman</p>
+        <button class="boton-compra" onclick="mostrarPopup('Spider Mascara-Y-Guantes-De-Spiderman')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://i.pinimg.com/736x/93/d4/f0/93d4f01d8f8abe92d294ea3201471281.jpg" alt="Pijama Spider">
+        <h2>Spider Pijama para niños</h2>
+        <p><strong>Q190.00</strong></p>
+        <p>vistete bien al dormir con spiderman</p>
+        <button class="boton-compra" onclick="mostrarPopup('Pijama De Spiderman')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://m.media-amazon.com/images/I/81yHN7qkbuL._UF894,1000_QL80_.jpg" alt="Maletin de Pintura para niños">
+        <h2>Maletin para niños </h2>
+        <p><strong>Q250.00</strong></p>
+        <p>Dibuja y colorea con Spiderman</p>
+        <button class="boton-compra" onclick="mostrarPopup('Maletin de Pintura para Niños')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://ae01.alicdn.com/kf/Sc87b899eb0b744a6b7581ddc82db3efdP.jpg" alt="Collar duo">
+        <h2>Collar para ti y tu pareja</h2>
+        <p><strong>Q50.00</strong></p>
+        <p>Para compartir con tu pareja o mejor amigo</p>
+        <button class="boton-compra" onclick="mostrarPopup('Collar Duo')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDv5kMk-F8IDdiTzaQkQbnFoD-81K2zFCsPUspYb2qclZM-Rx97OCVuQMiixDEMgzQiLQ&usqp=CAU" alt="Termo de acero inoxidable">
+        <h2>Termo Araña</h2>
+        <p><strong>Q100.00</strong></p>
+        <p>Para llevar tus bebidas o para un buen regalo</p>
+        <button class="boton-compra" onclick="mostrarPopup('Termo de acero inoxidable')">Comprar</button>
+    </div>
+
+	<div class="producto">
+        <img src="https://teenavi.com/wp-content/uploads/2018/11/Spider-Snoopy-Mug.jpg" alt="Taza">
+        <h2>Taza de SnoopyAraña</h2>
+        <p><strong>Q40.00</strong></p>
+        <p>No te quedes sin tu taza de SnoopyAraña</p>
+        <button class="boton-compra" onclick="mostrarPopup('Taza de SnoopySpider')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://tshirtclassic.com/snoopy-and-spiderman-sweatshirt" alt="Sudadera SnopAraña">
+        <h2>Sudadera de SnoopyAraña </h2>
+        <p><strong>Q200.00</strong></p>
+        <p>Crea oufit y Vistete bien con linda Sudadera</p>
+        <button class="boton-compra" onclick="mostrarPopup('Sudadera de Snoopy y Spiderman')">Comprar</button>
+    </div>
+
+</section>
+
+<div class="contacto">
+    <h3>Contáctanos</h3>
+    <a href="https://wa.me/50231805959" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:SpiderCompras.E.O@jugueteria.com">📧 Correo</a>
+    <a href="tel:+50255905261">📞 Llamada</a>
+</div>
+
+
+<div class="popup" id="popup">
+    <div class="popup-contenido">
+        <img src="https://i.imgur.com/U9dFIdh.png" alt="Éxito">
+        <h2>¡Compra realizada!</h2>
+        <p id="mensajeProducto"></p>
+        <button class="cerrar" onclick="cerrarPopup()">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    function mostrarPopup(producto) {
+        document.getElementById("mensajeProducto").innerText = "Has comprado: " + producto + ". Te contactaremos pronto.";
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
